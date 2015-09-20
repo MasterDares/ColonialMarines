@@ -1,6 +1,9 @@
 /**********************Marine Areas**************************/
 //NEW AREAS - APOPHIS775 - 05MAY15
 
+/area/sulaco/artillery
+	name = "\improper Sulaco Artillery"
+	icon_state = "artillery"
 
 /area/sulaco //Sulaco Area Super
 	name = "\improper Sulaco"
