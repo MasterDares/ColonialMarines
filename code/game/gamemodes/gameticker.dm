@@ -153,9 +153,9 @@ var/global/datum/controller/gameticker/ticker
 	lighting_controller.process()	//Start processing DynamicAreaLighting updates
 
 
-	if(config.sql_enabled)
-		spawn(3000)
-		statistic_cycle() // Polls population totals regularly and stores them in an SQL DB -- TLE
+//	if(config.sql_enabled)
+//		spawn(3000)
+//		statistic_cycle() // Polls population totals regularly and stores them in an SQL DB -- TLE
 
 	return 1
 
