@@ -173,6 +173,9 @@
 
 		for(var/mob/L in range(src, 10))
 			L << "\red <b>[new_xeno] crawls out of [affected_mob]!</b>"
+			if(prob(9))
+				playsound(affected_mob.loc, 'sound/music/JOHNCENA.ogg', 100, 0)
+				L << "\red <b>AND THAT TIME FOR...!</b>"
 		affected_mob.overlays += image('icons/mob/alien.dmi', loc = affected_mob, icon_state = "bursted_stand")
 	//	if(gib_on_success)
 		//	affected_mob.gib()
