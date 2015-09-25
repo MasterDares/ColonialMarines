@@ -8,6 +8,8 @@
 	origin_tech = "combat=4;materials=2"
 	ammo_type = "/obj/item/ammo_casing/c9mm"
 	automatic = 1
+//	var/burstfire = 0 //Whether or not the gun fires multiple bullets at once
+//	var/burst_count = 3
 
 	fire_delay = 0
 
@@ -28,6 +30,28 @@
 	isHandgun()
 		return 1
 
+/*/obj/item/weapon/gun/projectile/automatic/verb/ToggleFire()
+	set name = "Toggle Burstfire"
+	set category = "Object"
+	burstfire = !burstfire
+	usr << "You toggle \the [src]'s firing setting to [burstfire ? "burst fire" : "single fire"]."
+
+/obj/item/weapon/gun/projectile/automatic/Fire()
+	if(burstfire == 1)
+		if(ready_to_fire())
+			fire_delay = 0
+		else
+			usr << "<span class='warning'>\The [src] is still cooling down!</span>"
+			return
+		var/shots_fired = 0 //haha, I'm so clever
+		var/to_shoot = min(burst_count, getAmmo())
+		for(var/i = 1; i <= to_shoot; i++)
+			..()
+			shots_fired++
+		message_admins("[usr] just shot [shots_fired] burst fire bullets out of [getAmmo() + shots_fired] from their [src].")
+		fire_delay = shots_fired * 7
+	else
+		..()*/
 
 /obj/item/weapon/gun/projectile/automatic/c20r
 	name = "\improper C-20r SMG"
