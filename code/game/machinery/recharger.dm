@@ -98,6 +98,15 @@ obj/machinery/recharger/process()
 				use_power(150)
 			else
 				icon_state = "wrecharger2"
+		if(istype(charging, /obj/item/weapon/gun/twohanded/energy))
+			var/obj/item/weapon/gun/twohanded/energy/E = charging
+			if(E.power_supply.charge < E.power_supply.maxcharge)
+				E.power_supply.give(100)
+				icon_state = "recharger1"
+				use_power(250)
+			else
+				icon_state = "recharger2"
+			return
 
 obj/machinery/recharger/emp_act(severity)
 	if(stat & (NOPOWER|BROKEN) || !anchored)

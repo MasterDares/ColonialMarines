@@ -7,7 +7,7 @@
 	origin_tech = "combat=6;materials=5;powerstorage=4"
 	projectile_type = /obj/item/projectile/beam/sniper
 	slot_flags = SLOT_BACK
-	charge_cost = 600
+	charge_cost = 500
 	fire_delay = 35
 	force = 10
 	w_class = 4.0

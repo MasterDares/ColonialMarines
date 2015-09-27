@@ -27,6 +27,11 @@
 		name = "[initial(name)] (Wielded)"
 		update_icon()
 
+	emp_act(severity)
+		power_supply.use(round(power_supply.maxcharge / severity))
+		update_icon()
+		..()
+
 	Fire(atom/target as mob|obj|turf|area, mob/living/user as mob|obj, params, reflex = 0)//TODO: go over this
 		//Exclude lasertag guns from the CLUMSY check.
 		if(clumsy_check)
