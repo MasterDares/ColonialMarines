@@ -13,7 +13,7 @@ obj/machinery/recharger
 obj/machinery/recharger/attackby(obj/item/weapon/G as obj, mob/user as mob)
 	if(istype(user,/mob/living/silicon))
 		return
-	if(istype(G, /obj/item/weapon/gun/energy) || istype(G, /obj/item/weapon/melee/baton) || istype(G, /obj/item/weapon/melee/stunprod) || istype(G, /obj/item/weapon/melee/defibrillator))
+	if(istype(G, /obj/item/weapon/gun/energy) || istype(G, /obj/item/weapon/melee/baton) || istype(G, /obj/item/weapon/melee/stunprod) || istype(G, /obj/item/weapon/melee/defibrillator) || istype(G, /obj/item/weapon/gun/twohanded/energy))
 		if(charging)
 			return
 
