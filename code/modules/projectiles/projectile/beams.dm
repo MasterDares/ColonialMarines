@@ -161,3 +161,12 @@ var/list/beam_master = list()
 			if((istype(M.wear_suit, /obj/item/clothing/suit/bluetag))||(istype(M.wear_suit, /obj/item/clothing/suit/redtag)))
 				M.Weaken(5)
 		return 1
+
+/obj/item/projectile/beam/sniper
+	name = "sniper beam"
+	icon_state = "xray"
+	damage = 140
+	damage_type = BURN
+	stun = 3
+	weaken = 3
+	stutter = 3

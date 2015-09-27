@@ -49,6 +49,7 @@
 	var/eyeblur = 0
 	var/drowsy = 0
 	var/agony = 0
+	var/accuracy = 0
 
 	var/PROJECTILESPEED = 1 // Higher is slower
 

@@ -14,12 +14,14 @@
 	force = 5.0
 	origin_tech = "combat=1"
 	attack_verb = list("struck", "hit", "bashed")
+	zoomdevicename = "scope"
 
 	var/fire_sound = 'sound/weapons/Gunshot.ogg'
 	var/obj/item/projectile/in_chamber = null
 	var/caliber = ""
 	var/silenced = 0
 	var/recoil = 0
+	var/accuracy = 0
 	var/ejectshell = 1
 	var/clumsy_check = 1
 	var/tmp/list/mob/living/target //List of who yer targeting.
@@ -30,6 +32,8 @@
 	var/tmp/told_cant_shoot = 0 //So that it doesn't spam them with the fact they cannot hit them.
 	var/firerate = 1 	// 0 for one bullet after tarrget moves and aim is lowered,
 						//1 for keep shooting until aim is lowered
+
+	var/scoped_accuracy = null
 	var/fire_delay = 6
 	var/last_fired = 0
 		//flashlight stuff
@@ -54,6 +58,10 @@
 		for(var/obj/O in contents)
 			O.emp_act(severity)
 
+/obj/item/weapon/gun/New()
+	if(isnull(scoped_accuracy))
+		scoped_accuracy = accuracy
+
 /obj/item/weapon/gun/afterattack(atom/A as mob|obj|turf|area, mob/living/user as mob|obj, flag, params)
 	if(flag)	return //It's adjacent, is the user, or is on the user's person
 	if(istype(target, /obj/machinery/recharger) && istype(src, /obj/item/weapon/gun/energy))	return//Shouldnt flag take care of this?
@@ -64,6 +72,19 @@
 
 /obj/item/weapon/gun/proc/isHandgun()
 	return 1
+
+/obj/item/weapon/gun/proc/toggle_scope(var/zoom_amount=2.0)
+	//looking through a scope limits your periphereal vision
+	//still, increase the view size by a tiny amount so that sniping isn't too restricted to NSEW
+	var/zoom_offset = round(world.view * zoom_amount)
+	var/view_size = round(world.view + zoom_amount)
+	var/scoped_accuracy_mod = zoom_offset
+
+	zoom(zoom_offset, view_size)
+	if(zoom)
+		accuracy = scoped_accuracy + scoped_accuracy_mod
+		if(recoil)
+			recoil = round(recoil*zoom_amount+1) //recoil is worse when looking through a scope
 
 /obj/item/weapon/gun/proc/Fire(atom/target as mob|obj|turf|area, mob/living/user as mob|obj, params, reflex = 0)//TODO: go over this
 	//Exclude lasertag guns from the CLUMSY check.

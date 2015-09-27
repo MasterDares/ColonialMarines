@@ -45,6 +45,17 @@
 	..()
 	charge = 0
 
+/obj/item/weapon/cell/sniper
+	name = "high-capacity power cell"
+	origin_tech = "powerstorage=2"
+	icon_state = "hcell"
+	maxcharge = 3000
+	g_amt = 60
+
+/obj/item/weapon/cell/aniper/empty/New()
+	..()
+	charge = 0
+
 /obj/item/weapon/cell/high
 	name = "high-capacity power cell"
 	origin_tech = "powerstorage=2"

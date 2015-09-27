@@ -170,3 +170,4 @@ obj/item/weapon/gun/energy/laser/retro
 		power_supply.give(100)
 		update_icon()
 		return 1
+

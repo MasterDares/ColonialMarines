@@ -236,3 +236,41 @@ datum/hud/New(mob/owner)
 			usr << "\red Inventory hiding is currently only supported for human mobs, sorry."
 	else
 		usr << "\red This mob type does not use a HUD."
+
+/mob/proc/toggle_zoom_hud()
+	if(!hud_used)
+		return
+	if(!ishuman(src))
+		return
+	if(!client)
+		return
+	if(client.view != world.view)
+		return
+
+	if(hud_used.hud_shown)
+		hud_used.hud_shown = 0
+		if(src.hud_used.adding)
+			src.client.screen -= src.hud_used.adding
+		if(src.hud_used.other)
+			src.client.screen -= src.hud_used.other
+		if(src.hud_used.hotkeybuttons)
+			src.client.screen -= src.hud_used.hotkeybuttons
+		if(src.hud_used.item_action_list)
+			src.client.screen -= src.hud_used.item_action_list
+		src.client.screen -= src.internals
+		src.client.screen += src.hud_used.action_intent		//we want the intent swticher visible
+	else
+		hud_used.hud_shown = 1
+		if(src.hud_used.adding)
+			src.client.screen += src.hud_used.adding
+		if(src.hud_used.other && src.hud_used.inventory_shown)
+			src.client.screen += src.hud_used.other
+		if(src.hud_used.hotkeybuttons && !src.hud_used.hotkey_ui_hidden)
+			src.client.screen += src.hud_used.hotkeybuttons
+		if(src.internals)
+			src.client.screen |= src.internals
+		src.hud_used.action_intent.screen_loc = ui_acti //Restore intent selection to the original position
+
+	hud_used.hidden_inventory_update()
+	hud_used.persistant_inventory_update()
+	update_action_buttons()
