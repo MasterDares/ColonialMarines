@@ -65,7 +65,10 @@
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
 	req_access_txt = "0"
 	products = list(/obj/item/weapon/reagent_containers/hypospray/autoinjector/tricord = 10,  /obj/item/weapon/reagent_containers/hypospray/autoinjector/quickclot = 10,
-					/obj/item/weapon/reagent_containers/hypospray/autoinjector/dexP =10, /obj/item/weapon/reagent_containers/hypospray/autoinjector/clonefix = 10)
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/dexP = 10, /obj/item/weapon/reagent_containers/hypospray/autoinjector/clonefix = 10,
+					/obj/item/weapon/storage/pill_bottle/dermaline = 3, /obj/item/weapon/storage/pill_bottle/bicaridine = 3,
+					/obj/item/weapon/storage/pill_bottle/dexalinplus = 3, /obj/item/weapon/storage/pill_bottle/oxycodone = 3,
+					/obj/item/weapon/storage/pill_bottle/tricodrazine = 3, /obj/item/weapon/storage/pill_bottle/antitox = 3)
 	contraband = list(/obj/item/weapon/reagent_containers/hypospray/autoinjector/chloralhydrate =5)
 
 

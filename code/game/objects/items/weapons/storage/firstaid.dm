@@ -230,6 +230,76 @@
 		new /obj/item/weapon/reagent_containers/pill/tramadol( src )
 		new /obj/item/weapon/reagent_containers/pill/tramadol( src )
 
+/obj/item/weapon/storage/pill_bottle/dermaline
+	name = "Pill bottle (dermaline)"
+	desc = "Contains pills used to treat burns."
+
+	New()
+		..()
+		new /obj/item/weapon/reagent_containers/pill/dermaline( src )
+		new /obj/item/weapon/reagent_containers/pill/dermaline( src )
+		new /obj/item/weapon/reagent_containers/pill/dermaline( src )
+		new /obj/item/weapon/reagent_containers/pill/dermaline( src )
+		new /obj/item/weapon/reagent_containers/pill/dermaline( src )
+		new /obj/item/weapon/reagent_containers/pill/dermaline( src )
+		new /obj/item/weapon/reagent_containers/pill/dermaline( src )
+
+/obj/item/weapon/storage/pill_bottle/bicaridine
+	name = "Pill bottle (bicaridine)"
+	desc = "Contains pills used to treat brute."
+
+	New()
+		..()
+		new /obj/item/weapon/reagent_containers/pill/bicaridine( src )
+		new /obj/item/weapon/reagent_containers/pill/bicaridine( src )
+		new /obj/item/weapon/reagent_containers/pill/bicaridine( src )
+		new /obj/item/weapon/reagent_containers/pill/bicaridine( src )
+		new /obj/item/weapon/reagent_containers/pill/bicaridine( src )
+		new /obj/item/weapon/reagent_containers/pill/bicaridine( src )
+		new /obj/item/weapon/reagent_containers/pill/bicaridine( src )
+
+/obj/item/weapon/storage/pill_bottle/dexalinplus
+	name = "Pill bottle (dexalin plus)"
+	desc = "Contains pills used to treat oxygen deprivation."
+
+	New()
+		..()
+		new /obj/item/weapon/reagent_containers/pill/dexalinplus( src )
+		new /obj/item/weapon/reagent_containers/pill/dexalinplus( src )
+		new /obj/item/weapon/reagent_containers/pill/dexalinplus( src )
+		new /obj/item/weapon/reagent_containers/pill/dexalinplus( src )
+		new /obj/item/weapon/reagent_containers/pill/dexalinplus( src )
+		new /obj/item/weapon/reagent_containers/pill/dexalinplus( src )
+		new /obj/item/weapon/reagent_containers/pill/dexalinplus( src )
+
+/obj/item/weapon/storage/pill_bottle/oxycodone
+	name = "Pill bottle (oxycodone)"
+	desc = "Contains painkiller pills."
+
+	New()
+		..()
+		new /obj/item/weapon/reagent_containers/pill/oxycodone( src )
+		new /obj/item/weapon/reagent_containers/pill/oxycodone( src )
+		new /obj/item/weapon/reagent_containers/pill/oxycodone( src )
+		new /obj/item/weapon/reagent_containers/pill/oxycodone( src )
+		new /obj/item/weapon/reagent_containers/pill/oxycodone( src )
+		new /obj/item/weapon/reagent_containers/pill/oxycodone( src )
+		new /obj/item/weapon/reagent_containers/pill/oxycodone( src )
+
+/obj/item/weapon/storage/pill_bottle/tricodrazine
+	name = "Pill bottle (tricodrazine)"
+	desc = "Contains all-in treatment pills."
+
+	New()
+		..()
+		new /obj/item/weapon/reagent_containers/pill/tricordrazine( src )
+		new /obj/item/weapon/reagent_containers/pill/tricordrazine( src )
+		new /obj/item/weapon/reagent_containers/pill/tricordrazine( src )
+		new /obj/item/weapon/reagent_containers/pill/tricordrazine( src )
+		new /obj/item/weapon/reagent_containers/pill/tricordrazine( src )
+		new /obj/item/weapon/reagent_containers/pill/tricordrazine( src )
+		new /obj/item/weapon/reagent_containers/pill/tricordrazine( src )
+
 
 /obj/item/weapon/storage/pill_bottle/dice
 	name = "pack of dice"

@@ -131,6 +131,14 @@
 		..()
 		reagents.add_reagent("kelotane", 15)
 
+/obj/item/weapon/reagent_containers/pill/dermaline
+	name = "Dermaline pill"
+	desc = "Used to treat burns."
+	icon_state = "pill11"
+	New()
+		..()
+		reagents.add_reagent("dermaline", 15)
+
 /obj/item/weapon/reagent_containers/pill/tramadol
 	name = "Tramadol pill"
 	desc = "A simple painkiller."
@@ -179,7 +187,7 @@
 	icon_state = "pill18"
 	New()
 		..()
-		reagents.add_reagent("bicaridine", 20)
+		reagents.add_reagent("bicaridine", 15)
 
 /obj/item/weapon/reagent_containers/pill/happy
 	name = "Happy pill"
@@ -189,6 +197,30 @@
 		..()
 		reagents.add_reagent("space_drugs", 15)
 		reagents.add_reagent("sugar", 15)
+
+/obj/item/weapon/reagent_containers/pill/dexalinplus
+	name = "Dexalin Plus pill"
+	desc = "Used to treat oxygen deprivation."
+	icon_state = "pill8"
+	New()
+		..()
+		reagents.add_reagent("dexalinp", 15)
+
+/obj/item/weapon/reagent_containers/pill/oxycodone
+	name = "Oxycodone pill"
+	desc = "A difficult painkiller."
+	icon_state = "pill9"
+	New()
+		..()
+		reagents.add_reagent("oxycodone", 15)
+
+/obj/item/weapon/reagent_containers/pill/tricordrazine
+	name = "Tricordrazine pill"
+	desc = "A all-in treatment pill."
+	icon_state = "pill15"
+	New()
+		..()
+		reagents.add_reagent("tricordrazine", 15)
 
 /obj/item/weapon/reagent_containers/pill/zoom
 	name = "Zoom pill"
