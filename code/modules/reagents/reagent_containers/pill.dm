@@ -8,6 +8,7 @@
 	icon_state = null
 	item_state = "pill"
 	possible_transfer_amounts = null
+	slot_flags = SLOT_EARS
 	volume = 50
 
 	New()
