@@ -3,7 +3,7 @@
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "s-casing"
 	flags = FPRINT | TABLEPASS | CONDUCT
-	slot_flags = SLOT_BELT
+	slot_flags = SLOT_BELT | SLOT_EARS
 	throwforce = 1
 	w_class = 1.0
 	var/spent = 0
