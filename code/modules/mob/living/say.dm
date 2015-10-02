@@ -367,16 +367,13 @@ var/list/department_radio_keys = list(
 				message_range = 1
 				italics = 1
 /////SPECIAL HEADSETS END
-
 	var/datum/gas_mixture/environment = loc.return_air()
 	if(environment)
 		var/pressure = environment.return_pressure()
 		if (pressure < SAY_MINIMUM_PRESSURE)	//in space no one can hear you scream
 			italics = 1
 			message_range = 1
-
 	var/list/listening
-
 	listening = get_mobs_in_view(message_range, src)
 	for(var/mob/M in player_list)
 		if (!M.client)
@@ -385,51 +382,39 @@ var/list/department_radio_keys = list(
 			continue
 		if(M.stat == DEAD && (M.client.prefs.toggles & CHAT_GHOSTEARS) && src.client) // src.client is so that ghosts don't have to listen to mice
 			listening|=M
-
 	var/turf/T = get_turf(src)
 	var/list/W = hear(message_range, T)
-
 	for (var/obj/O in ((W | contents)-used_radios))
 		W |= O
-
 	for (var/mob/M in W)
 		W |= M.contents
-
 	for (var/atom/A in W)
 		if(istype(A, /mob/living/simple_animal/parrot)) //Parrot speech mimickry
 			if(A == src)
 				continue //Dont imitate ourselves
-
 			var/mob/living/simple_animal/parrot/P = A
 			if(P.speech_buffer.len >= 10)
 				P.speech_buffer.Remove(pick(P.speech_buffer))
 			P.speech_buffer.Add(message)
-
 		if(istype(A, /obj/)) //radio in pocket could work, radio in backpack wouldn't --rastaf0
 			var/obj/O = A
 			spawn (0)
 				if(O && !istype(O.loc, /obj/item/weapon/storage))
 					O.hear_talk(src, message)
-
-
 /*			Commented out as replaced by code above from BS12
 	for (var/obj/O in ((V | contents)-used_radios)) //radio in pocket could work, radio in backpack wouldn't --rastaf0
 		spawn (0)
 			if (O)
 				O.hear_talk(src, message)
 */
-
 /*	if(isbrain(src))//For brains to properly talk if they are in an MMI..or in a brain. Could be extended to other mobs I guess.
 		for(var/obj/O in loc)//Kinda ugly but whatever.
 			if(O)
 				spawn(0)
 					O.hear_talk(src, message)
 */
-
-
 	var/list/heard_a = list() // understood us
 	var/list/heard_b = list() // didn't understand us
-
 	for (var/M in listening)
 		if(hascall(M,"say_understands"))
 			if (M:say_understands(src,speaking))
@@ -438,22 +423,17 @@ var/list/department_radio_keys = list(
 				heard_b += M
 		else
 			heard_a += M
-
 	var/speech_bubble_test = say_test(message)
 	var/image/speech_bubble = image('icons/mob/talk.dmi',src,"h[speech_bubble_test]")
 	spawn(30) del(speech_bubble)
-
 	for(var/mob/M in hearers(5, src))
 		if(M != src && is_speaking_radio)
 			M:show_message("<span class='notice'>[src] talks into [used_radios.len ? used_radios[1] : "radio"]</span>")
-
 	var/rendered = null
 	if (length(heard_a))
 		var/message_a = say_quote(message,speaking)
-
 		if (italics)
 			message_a = "<i>[message_a]</i>"
-
 		rendered = "<span class='game say'><span class='name'>[GetVoice()]</span>[alt_name] <span class='message'>[message_a]</span></span>"
 		for (var/mob/M in heard_a)
 			if(hascall(M,"show_message"))
@@ -492,20 +472,16 @@ var/list/department_radio_keys = list(
 
 			/*
 			if(M.client)
-
 				if(!M.client.bubbles || M == src)
 					var/image/I = image('icons/effects/speechbubble.dmi', B, "override")
 					I.override = 1
 					M << I
 			*/ /*
-
 		flick("[presay]say", B)
-
 		if(istype(loc, /turf))
 			B.loc = loc
 		else
 			B.loc = loc.loc
-
 		spawn()
 			sleep(11)
 			del(B)
@@ -523,5 +499,3 @@ var/list/department_radio_keys = list(
 
 /mob/living/proc/GetVoice()
 	return name
-
-

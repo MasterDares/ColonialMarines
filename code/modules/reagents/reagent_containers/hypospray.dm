@@ -12,7 +12,7 @@
 	volume = 30
 	possible_transfer_amounts = null
 	flags = FPRINT | TABLEPASS | OPENCONTAINER
-	slot_flags = SLOT_BELT
+	slot_flags = SLOT_BELT | SLOT_EARS
 
 /obj/item/weapon/reagent_containers/hypospray/attack_paw(mob/user as mob)
 	if (!isalien(user))

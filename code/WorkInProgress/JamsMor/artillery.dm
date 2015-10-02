@@ -114,9 +114,8 @@
 	needx = H.x
 	needy = H.y
 	needz = H.z
-	if(adminlog)
-		message_admins("Artillery called by [H.name] ([H.key]) in [H.x], [H.y], [H.z] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[H.x];Y=[H.y];Z=[H.z]'>JMP</a>)")
-		log_game("Artillery called by [H.name] ([H.key]) in [H.x], [H.y], [H.z]")
+	message_admins("Artillery called by [H.name] ([H.key]) in [H.x], [H.y], [H.z] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[H.x];Y=[H.y];Z=[H.z]'>JMP</a>)")
+	log_game("Artillery called by [H.name] ([H.key]) in [H.x], [H.y], [H.z]")
 	status = 1
 	return
 
@@ -127,17 +126,16 @@
 			//if(src.status == 0) return
 			src.status = 0
 			var/mob/U = href_list["user"]
-			var/area/last = U.lastarea
-			command_alert("Warning! The artillery has been called in [last.name]. The artillery will be 30 secons.", "NMV Sulaco::Arillery Alert!")
+//			var/area/last = U.lastarea
+//			command_alert("Warning! The artillery has been called in [last.name]. The artillery will be 30 secons.", "NMV Sulaco::Arillery Alert!")
 			sleep(300)
-			command_alert("Warning! The artillery has been called in [last.name]. The artillery will be NOW.", "NMV Sulaco::Arillery Alert!")
+//			command_alert("Warning! The artillery has been called in [last.name]. The artillery will be NOW.", "NMV Sulaco::Arillery Alert!")
 			src.BoomToTarget(needx, needy, needz)
-			command_alert("Warning! The artillery ended.", "NMV Sulaco::Arillery Alert!")
+//			command_alert("Warning! The artillery ended.", "NMV Sulaco::Arillery Alert!")
 			src.needx = null
 			src.needy = null
-			if(adminlog)
-				message_admins("Artillery approved by [U.name] ([U.key]) in [U.x], [U.y], [U.z] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[U.x];Y=[U.y];Z=[U.z]'>JMP</a>)")
-				log_game("Artillery called by [U.name] ([U.key]) in [U.x], [U.y], [U.z]")
+			message_admins("Artillery approved by [U.name] ([U.key]) in [U.x], [U.y], [U.z] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[U.x];Y=[U.y];Z=[U.z]'>JMP</a>)")
+			log_game("Artillery called by [U.name] ([U.key]) in [U.x], [U.y], [U.z]")
 			src.needz = null
 			src.power = 0
 			sleep(15000)
