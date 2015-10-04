@@ -190,6 +190,9 @@
 /obj/item/weapon/gun/proc/can_hit(var/mob/living/target as mob, var/mob/living/user as mob)
 	return in_chamber.check_fire(target,user)
 
+/obj/item/weapon/gun/proc/consume_next_projectile()
+	return null
+
 /obj/item/weapon/gun/proc/click_empty(mob/user = null)
 	if (user)
 		user.visible_message("*click click*", "\red <b>*click*</b>")
