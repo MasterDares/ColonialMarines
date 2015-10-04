@@ -260,6 +260,20 @@
 			..()
 		return
 
+/obj/item/mgrenade
+	icon = 'icons/obj/grenade.dmi'
+	icon_state = "40mm"
+	var/primed = null
+	throwforce = 15
+
+	throw_impact(atom/hit_atom)
+		if(primed)
+			explosion(hit_atom, 0, 0, 2, 3)
+			del(src)
+		else
+			..()
+		return
+
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/flashbang
 	name = "SGL-6 Grenade Launcher"
 	icon_state = "mecha_grenadelnchr"

@@ -94,3 +94,10 @@
 	desc = "A 7.62 bullet casing."
 	caliber = "a762"
 	projectile_type = "/obj/item/projectile/bullet/a762"
+
+/obj/item/ammo_casing/mmgrenade
+	name = "40mm grenade shell"
+	desc = "-"
+	icon = 'icons/obj/grenade.dmi'
+	icon_state = "40mm"
+	projectile_type = /obj/item/mgrenade
