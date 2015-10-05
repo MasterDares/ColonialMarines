@@ -5,7 +5,7 @@
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "M79closed"
 	item_state = "M79"
-	w_class = 4.0
+	w_class = 3
 	throw_speed = 2
 	throw_range = 10
 	force = 5.0
