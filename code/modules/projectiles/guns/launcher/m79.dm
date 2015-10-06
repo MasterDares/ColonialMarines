@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/launcher/m79
 	var/projectile
-	name = "M79"
-	desc = "granatomet babah bym bym"
+	name = "M79 Grenade Launcher"
+	desc = "M79 Grenade Launcher. Nice weapon for tanks."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "M79closed"
 	item_state = "M79"
