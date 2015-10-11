@@ -210,6 +210,7 @@ obj/item/device/radio/headset/mdelta
 		new /obj/item/device/flashlight/flare( src )
 		new /obj/item/stack/medical/bruise_pack/marine( src )
 		new /obj/item/weapon/reagent_containers/pill/tramadol( src )
+		new /obj/item/weapon/mre( src )
 		return
 
 /obj/item/weapon/storage/box/explosive_mines

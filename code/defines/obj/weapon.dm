@@ -25,6 +25,27 @@
 	flags = TABLEPASS
 	w_class = 3.0
 
+/obj/item/weapon/mre
+	name = "MRE closed"
+	desc = "Meal, ready-to-eat, individual. Closed."
+	icon = 'icons/obj/food.dmi'
+	icon_state = "MRE_0"
+	force = 0
+	throwforce = 0
+	throw_speed = 1
+	throw_range = 4
+	w_class = 3.0
+
+/obj/item/weapon/mre/attack_self(mob/M as mob)
+	var/type = pick(/obj/item/weapon/reagent_containers/food/snacks/mre_ready)
+	var/obj/item/I = new type(M)
+	M.u_equip(src)
+	M.put_in_hands(I)
+	M << "\blue You opened the MRE."
+	del(src)
+	return
+
+
 /obj/item/weapon/bananapeel
 	name = "banana peel"
 	desc = "A peel from a banana."

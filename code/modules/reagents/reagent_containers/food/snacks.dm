@@ -636,6 +636,16 @@
 				src.name = "donk-pocket"
 		return
 
+/obj/item/weapon/reagent_containers/food/snacks/mre_ready
+	name = "MRE"
+	desc = "Meal, ready-to-eat, individual."
+	icon_state = "MRE_1"
+	New()
+		..()
+		reagents.add_reagent("nutriment", 6)
+		reagents.add_reagent("inaprovaline", 2)
+		bitesize = 3
+
 /obj/item/weapon/reagent_containers/food/snacks/brainburger
 	name = "brainburger"
 	desc = "A strange looking burger. It looks almost sentient."
