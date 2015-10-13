@@ -33,37 +33,17 @@
 					playsound(user, 'sound/effects/Glasshit.ogg', 100, 1)
 				else
 					playsound(user, 'sound/effects/Glasshit.ogg', 100, 1)
-					user << "/blue You hit the glass"
+					user << "\blue You hit the glass."
 					src.hitstaken++
 					if(src.hitstaken == 2)
-						playsound(user, 'sound/effects/Glassbr3.ogg', 100, 1) //Break cabinet, receive goodies. Cabinet's fucked for life after that.
 						src.smashed = 1
 						src.locked = 0
 						src.opened = 1
 						icon_state = "firstaidcabinet_1"
-						playsound(src.locked, 'sound/effects/WOOP-WOOP.ogg', 100, 1)
-						user << "/blue ti sromal fuckin steklo"
+						playsound(src.loc, 'sound/effects/WOOP-WOOP.ogg', 100, 1)
+						user << "\blue ti sromal fuckin steklo."
 				update_icon()
 			return
-		else
-			if(src.smashed)
-				return
-			if(istype(O, /obj/item/device/multitool))
-				if(opened)
-					opened = 0
-					icon_state = "firstaidcabinet"
-					spawn(10) update_icon()
-					return
-				else
-					user << "\red Resetting circuitry..."
-					sleep(50)
-					src.locked = 1
-					user << "\blue You re-enable the lockedcking modules."
-					playsound(user, 'sound/machines/lockenable.ogg', 50, 1)
-					return
-			else
-				return
-
 
 	attack_hand(mob/user as mob)
 
